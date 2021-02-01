@@ -1,21 +1,7 @@
- /*Jag lekte runt med try och catch, jag ville använda throw men kom inte på något.
- Här är några av mina tester med try och catch:
- 
- try {
-  Block of code to try
-}
-catch(err) {
-  Block of code to handle errors
-}
+ /* Jag testade mig av alert("Hej") för at kolla om nått funkar, det tvingar webbläsaren att läsa medelandet.
+   Jag sökte efter. Jag felsökte mina problem i source fönstret. Där i consolen så hittade jag de flesta av mina fel.
 
-try {
-  Block of code to try
-}
-catch(err) {
-  Block of code to handle errors
-}
 */ 
-
 
 document.addEventListener("DOMContentLoaded", () => {
     let inputBox = document.querySelector("#input1");
@@ -26,17 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-// Denna kod låter oss skapa sektioner med text(titel och undertext) som vi kan skriva i. 
-// Main är föräldren och det är där alla dessa event(child,titel,blurb) skapas.
+ // Denna kod låter oss skapa sektioner med text(titel och undertext) som vi kan skriva i. 
+// Main är föräldren och det är där alla dessa event(child,titel,blurb) skapas. Barnet är sektioner och i sektionerner skapas titeln och undertexten.
   let makeSections = (count) => {
     for (var i = 0; i < count; i++) {
       var parent = document.querySelector("main");
   
       var child = document.createElement("section");
-      var title = document.createElement("h4");
+
+      //Istället för h4 så ändarade jag till h3, det ser bättre ut.
+      var title = document.createElement("h3");
       var blurb = document.createElement("p");
   
-      title.innerText = "Title " + i;
+      // varje gång vi skpaar en ny titel så vill vi inte att det börjar med noll utan 1.
+      title.innerText = "Title " + (i+1);
       //Här gör vi så att undertexten(blurb) får upp "Let's wright something!" varje gång vi skapar en sektion, itsället för massa konstig undertext.
       blurb.innerText = `Let's wright something!`;
   
@@ -51,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-// Här låter det oss att gå tillbaka eller ta bort en/flera sektioner(titel och undertext).
+ // Här låter det oss att gå tillbaka eller ta bort en/flera sektioner(titel och undertext).
     let removeAllSections = () => {
         var test_sections = document.querySelectorAll("section");
         for (var i = 0; i < test_sections.length; i++) {
@@ -59,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
       
-     // Eftersom det står "true" så kan användaren ändra på titeln och undertexten när användaren klickar på de.
+      // Eftersom det står "true" så kan användaren ändra på titeln och undertexten när användaren klickar på de.
      // Om det istället skulle ha stått "false" så skulle eventet inte fungera.
       let makeEditable = (elem) => {
         elem.addEventListener("click", (event) => {
@@ -70,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
           elem.contentEditable = false;
         });
       };
+
       
       
       
