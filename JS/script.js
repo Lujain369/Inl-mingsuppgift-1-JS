@@ -16,7 +16,8 @@ let rubrik= document.querySelector("header");
 
 
 
-      //Denna kod ska kunn låta användaren flytta på en sektion.
+      /* Denna kod ska kunn låta användaren flytta på en sektion. Har inte fått den att funka...inte än.
+      
       let flyg= document.querySelector("main, section");
       flyg.addEventListener("click", startflyga,{once: true});
       function flyger(event){
@@ -39,4 +40,4 @@ let rubrik= document.querySelector("header");
           blogg.style="";
           flyg.addEventListener("click", startflyga,{once: true});
           document.removeEventListener("mousemove",fly);
-      }
+      } */
